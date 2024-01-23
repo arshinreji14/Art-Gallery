@@ -1,7 +1,7 @@
-export default function Navbar() {
+export default function Cart() {
     return (
       <main className="">
-      Navbar
+       Cart
       </main>
     )
   }
