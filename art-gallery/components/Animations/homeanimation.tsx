@@ -26,8 +26,8 @@ const HomeAnimation:React.FC<GsapScrollTriggerprops>=({  children,
         }
 
       })
-      tl.to(xhigh.current,{ duration: 6,x:-900},0)
-      tl.to(high.current,{duration: 6,x:900},0)
+      tl.to(xhigh.current,{ duration:1000,x:-900},0)
+      tl.to(high.current,{duration:1000,x:900},0)
 
     })
     return () => context.revert();

@@ -1,7 +1,10 @@
+import ShopeItemlist from '@/components/Shope/Shopeitemlist';
+
 export default function Shop() {
-    return (
-      <main className="">
-       Shop
-      </main>
-    )
+  return (
+    <main className="">
+     <ShopeItemlist/>
+    </main>
+  )
   }
+
