@@ -1,13 +1,43 @@
+"use client"
+import { useEffect, useState } from 'react';
 import Showcaseitem from "./Showcaseitem";
 import Image from "next/image";
+const page =1
+const per_page =5
+interface images{
+    id:number,
+    name: string,
+    tagline: string,
+    image_url: string
+}
 export default function Showcaselist(){
+    const [data, setData]=useState<images[]>([])
+    useEffect(()=>{
+        async function fetchData(){
+            try{
+                const response=await
+                fetch(` https://api.punkapi.com/v2/beers?page=${page}&per_page${per_page}`)
+
+                const fetchedData = await response.json();
+    console.log(fetchedData);
+     setData(fetchedData)
+            }
+            catch(error){
+                console.error('Error fetching data',error)
+            }
+        }
+fetchData();
+    },[] )
+console.log(data);
+
     return(
         <main>
 
 <div className="sticky grid grid-rows-3 gap-4 mt-4 mx-3 md:mx-auto" >
-    {[1,2,3,4,5,6,7,8].map((number,index)=>(
-    <div key={number} className="">
-        <Showcaseitem value={index}/>
+    {data.map((item)=>(
+
+    <div key={item.id} className="">
+        <Showcaseitem value={item}/>
     </div>
 ))} </div>
 
