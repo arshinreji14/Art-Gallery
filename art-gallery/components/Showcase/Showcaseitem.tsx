@@ -4,9 +4,9 @@ import HomeAnimation from "../Animations/homeanimation";
 import { useEffect, useRef, useState } from "react";
 interface images{
   id:number,
-  name: string,
-  tagline: string,
-  image_url: string
+  image: string,
+  title: string,
+description: string
 }
 type ShowCaseItemProps = {
   value: images
@@ -31,7 +31,7 @@ const high = useRef(null);
           <div ref={xhigh} className="image  sm:col-span-2 flex items-center justify-center shadow-gray shadow-xl ">
             <div className=" w-[21rem] h-[14rem] sm:w-[38rem] sm:h-[26rem] md:w-[28rem] md:h-[18rem] lg:w-[44rem] lg:h-[28rem] relative  bg-white">
               <Image
-                src={value.image_url||""}
+                src={value.image||""}
                 alt="image not found"
                 fill
                 className="relative rounded-3xl "
@@ -40,9 +40,9 @@ const high = useRef(null);
           </div>
 
           <div ref={high} className="detailes  hidden sm:block  md:col-span-1 py-40 px-2 ">
-            <h1 className=" text-5xl font-bold "> {value.name} </h1>
+            <h1 className=" text-5xl font-bold "> {value.title} </h1>
             <p className="text-xl mt-4">
-              {value.tagline}
+              {value.description}
             </p>
           </div>
         </div>

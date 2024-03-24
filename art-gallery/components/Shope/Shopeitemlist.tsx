@@ -1,22 +1,19 @@
 "use client"
 import ShopeCardItem from './shopeitem';
 import { useEffect, useState } from 'react';
-interface images{
-  id:number,
-  name: string,
-  tagline: string,
-  image_url: string
-}
+import Datas from '@/app/schema/data';
 const page=1
 const per_page=20
 export default function ShopeItemlist (){
-  const [data,setData]=useState<images[]>([])
+  const [data,setData]=useState<Datas[]>([])
   useEffect(()=>{
     async function fetchdata(){
       try{
-        const response= await fetch(` https://api.punkapi.com/v2/beers?page=${page}&per_page${per_page}`)
+        const response= await fetch(`http://localhost:3000/product`)
         const fetchedata=await response.json()
         setData(fetchedata)
+
+
       }
       catch(error){
         console.error("error fetched data",error)
@@ -25,9 +22,11 @@ export default function ShopeItemlist (){
     }
     fetchdata()
   },[])
+  console.log(data);
+  
   return(
     <main>
-      <div className='grid  grid-cols-3 gap-6'>
+      <div className='grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 xl:grid-cols-5 gap-4  mt-10 mx-10'>
     {data.map((item)=>(
 <div key={item.id}>
   <ShopeCardItem value={item}/>

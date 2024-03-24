@@ -1,0 +1,6 @@
+{
+  "files.autoSave": "afterDelay",
+  "editor.cursorStyle": "block",
+  "workbench.activityBar.iconClickBehavior": "focus",
+  "workbench.editor.centeredLayoutFixedWidth": true
+}
