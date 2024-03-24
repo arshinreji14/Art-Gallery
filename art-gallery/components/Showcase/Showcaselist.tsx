@@ -16,7 +16,7 @@ export default function Showcaselist(){
         async function fetchData(){
             try{
                 const response=await
-                fetch(` https://api.punkapi.com/v2/beers?page=${page}&per_page${per_page}`)
+                fetch(` http://localhost:3000/product`)
 
                 const fetchedData = await response.json();
     console.log(fetchedData);

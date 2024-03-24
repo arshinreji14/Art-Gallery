@@ -3,14 +3,14 @@ const heroimg = "/images/hero.jpg";
 export default function Hero() {
   return (
     <main className="">
-      <div className=" flex-shrink w-full md:h-screen h-52 relative">
+      <div className=" flex-shrink w-full md:h-screen h-52 relative shadow-inner sh">
         <Image
           src={heroimg || ""}
           alt="hero image"
           fill
           objectFit="cover"
           className=""
-          sizes="max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
         />
 
         <div className="relative w-full h-52 md:h-screen grid grid-cols-3">

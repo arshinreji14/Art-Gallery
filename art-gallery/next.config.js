@@ -5,6 +5,6 @@ module.exports = nextConfig
 
 module.exports = {
   images: {
-    domains: ['images.punkapi.com'], // Add your domain(s) here
+    domains: ['i.postimg.cc'], 
   },
 };
