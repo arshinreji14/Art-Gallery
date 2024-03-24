@@ -1,8 +1,7 @@
-import cartData from '@/cartdata';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { mergeData } from '@/cartdata';
 interface images{
   id:number,
   image: string,
@@ -18,13 +17,7 @@ const ShopeCardItem:React.FC<ShopCardItemProps>=({value})=>{
     // Add the current item to the cart items array
     setCartItems(prevCartItems => [...prevCartItems, value]);
 
-
-
-
   };
-cartData.push(...cartItems)
-const mergedData = [...cartData, ...cartItems];
-console.log(mergedData);
 
   return(
     <div>

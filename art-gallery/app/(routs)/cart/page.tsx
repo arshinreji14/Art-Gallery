@@ -1,6 +1,6 @@
-import cartData from '@/cartdata'
+
 export default function Cart() {
-console.log(cartData);
+
 
 
     return (

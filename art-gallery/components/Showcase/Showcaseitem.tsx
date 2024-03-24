@@ -4,9 +4,9 @@ import HomeAnimation from "../Animations/homeanimation";
 import { useEffect, useRef, useState } from "react";
 interface images{
   id:number,
-  name: string,
-  tagline: string,
-  image_url: string
+  image: string,
+  title: string,
+description: string
 }
 type ShowCaseItemProps = {
   value: images

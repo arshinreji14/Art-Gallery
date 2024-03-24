@@ -1,6 +1,5 @@
 import Datas from '@/app/schema/data'
 import Image from 'next/image'
-
 type SearchItemprps={
 value:Datas
 }

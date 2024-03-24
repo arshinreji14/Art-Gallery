@@ -6,9 +6,9 @@ const page =1
 const per_page =5
 interface images{
     id:number,
-    name: string,
-    tagline: string,
-    image_url: string
+    image: string,
+    title: string,
+    description: string
 }
 export default function Showcaselist(){
     const [data, setData]=useState<images[]>([])
