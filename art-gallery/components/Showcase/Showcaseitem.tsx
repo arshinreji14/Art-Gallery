@@ -29,9 +29,9 @@ const high = useRef(null);
           className=" h-[16rem]  sm:h-[26rem] md:h-[26rem] lg:h-[38rem] grid  md:grid-cols-3 "
         >
           <div ref={xhigh} className="image  sm:col-span-2 flex items-center justify-center shadow-gray shadow-xl ">
-            <div className=" w-[21rem] h-[14rem] sm:w-[38rem] sm:h-[26rem] md:w-[28rem] md:h-[18rem] lg:w-[44rem] lg:h-[28rem] relative  bg-white">
+            <div className=" w-[21rem] h-[14rem] sm:w-[38rem] sm:h-[26rem] md:w-[28rem] md:h-[18rem] lg:w-[44rem] lg:h-[28rem] relative  ">
               <Image
-                src={value.image||""}
+              src={`${value.image}.jpg` || ""}
                 alt="image not found"
                 fill
                 className="relative rounded-3xl "

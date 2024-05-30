@@ -1,36 +1,46 @@
-
+import axios from 'axios';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useState } from 'react';
-interface images{
-  id:number,
-  image: string,
-  title: string,
-  description: string
-}
-type ShopCardItemProps = {
-  value: images
-};
-const ShopeCardItem:React.FC<ShopCardItemProps>=({value})=>{
-  const [cartItems, setCartItems] = useState<images[]>([]);
-  const addToCart = () => {
-    // Add the current item to the cart items array
-    setCartItems(prevCartItems => [...prevCartItems, value]);
 
+interface Product {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+}
+
+type ShopCardItemProps = {
+  value: Product;
+};
+
+const ShopCardItem: React.FC<ShopCardItemProps> = ({ value }) => {
+  const handileAddToCart = async () => {
+    try {
+      const response = await axios.post('http://localhost:4000/api/cart', value);
+      console.log('API response:', response.data); // Handle successful response (optional)
+    } catch (error) {
+      console.error('Error adding to cart (API):', error); // Handle errors
+    }
   };
 
-  return(
+  return (
     <div>
-<div className="max-w-[15rem] max-h-[17rem]  h-[11rem] w-[10rem] sm:h-[13rem]  sm:w-[12rem] lg:w-[14rem] lg:h-[15rem] bg-white border border-gray-200 rounded-lg shadow  dark:border-black">
-    <div className='max-w-[15rem] max-h-[17rem]  h-[11rem] w-[10rem] sm:h-[13rem]  sm:w-[12rem] lg:w-[14rem] lg:h-[15rem] relative'>
-        <Image className="rounded-t-lg" src={value.image|| ""} alt="" fill
-         objectFit='fit'/>
-           {/* <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{value.name}</h5>
-           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{value.tagline}</p> */}
-     </div>
-</div>
+      <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-60 h-96 hover:rotate-1 transform transition duration-800">
+        <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl h-80 ">
+          <Image className="rounded-t-lg" src={`${value.image}.jpg` || ""} alt="" fill objectFit='fit' />
+        </div>
+        <div className="p-6 text-center">
+          <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+            {value.title}
+          </h4>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handileAddToCart}>
+            Add To Cart
+          </button>
+        </div>
+        <div className="flex justify-center p-6 pt-2 gap-7"></div>
+      </div>
     </div>
-  )
+  );
+};
 
-}
-export default ShopeCardItem
+export default ShopCardItem;

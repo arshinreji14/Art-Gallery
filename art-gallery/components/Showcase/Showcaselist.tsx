@@ -16,7 +16,7 @@ export default function Showcaselist(){
         async function fetchData(){
             try{
                 const response=await
-                fetch(` http://localhost:3000/product`)
+                fetch(` http://localhost:4000/api/products`)
 
                 const fetchedData = await response.json();
     console.log(fetchedData);

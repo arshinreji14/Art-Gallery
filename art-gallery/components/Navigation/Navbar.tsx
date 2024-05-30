@@ -38,7 +38,7 @@ export default function Navbar() {
               width={50}
               height={50}
             />
-            <h1 className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <h1 className="self-center text-2xl font-semibold whitespace-nowrap text-black">
               Art Gallery
             </h1>
           </Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
               <input
                 type="text"
                 id="search-navbar"
-                className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search..."
               ></input>
             </div>
@@ -91,7 +91,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/gallery"
-                  className="block py-2 px-3 text-white rounded md:bg-transparent -700 md:p-0 hover:text-blue-600"
+                  className="block py-2 px-3 text-black rounded md:bg-transparent -700 md:p-0 hover:text-blue-600"
                   aria-current="page"
                 >
                   Gallery
@@ -100,7 +100,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/shop"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-black dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Shop
                 </Link>
@@ -108,7 +108,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/artistinfo"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Artist info
                 </Link>
