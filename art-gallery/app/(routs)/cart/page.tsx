@@ -1,3 +1,4 @@
+import Cartitemlist from '@/components/cart/cartitemlist';
 
 export default function Cart() {
 
@@ -6,8 +7,7 @@ export default function Cart() {
     return (
       <main className="">
     <div className=''>
-
-<h1>cart</h1>
+      <Cartitemlist/>
 
     </div>
       </main>

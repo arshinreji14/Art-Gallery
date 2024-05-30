@@ -3,7 +3,7 @@ import ShopeItemlist from '@/components/Shope/Shopeitemlist';
 
 export default function Shop() {
   return (
-    <main className="">
+    <main className="bg-white">
       <ShopHero/>
       <div className="mx-auto">
      <ShopeItemlist/>
